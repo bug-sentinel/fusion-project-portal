@@ -1,8 +1,8 @@
 {
   "$schema": "../schema/portal.config.schema.json",
-  "title": "Resource Allocation",
-  "description": "Welcome to the Resource Allocation portal powered by Fusion",
-  "portalId": "a7035eef-7fd0-443f-7906-08db31e4e851",
+  "title": "Project Portal",
+  "description": "Welcome to the project portal powered by Fusion",
+  "portalId": "0177ef5f-c49e-4d2a-7907-08db31e4e851",
   "serviceDiscovery": {
     "client": {
       "baseUri": "https://fusion-s-portal-ci.azurewebsites.net",
@@ -30,9 +30,9 @@
     }
   },
   "bookmarks": {
-    "subSystem": "Resource Allocation",
-    "identifier": "resource-allocation",
-    "name": "Resource Allocation"
+    "subSystem": "Project Portal",
+    "identifier": "project-portal",
+    "name": "Project Portal"
   },
   "logger": {
     "level": 0,

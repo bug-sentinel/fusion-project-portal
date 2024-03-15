@@ -42,8 +42,8 @@ export function createPortalFramework(portalConfig: PortalConfig) {
 				portalId: portalConfig.portalId,
 				portalEnv: portalConfig.fusionLegacyEnvIdentifier,
 			});
-			console.log(portalConfig.portalId === '0177ef5f-c49e-4d2a-7907-08db31e4e851');
-			if (portalConfig.portalId === '0177ef5f-c49e-4d2a-7907-08db31e4e851') {
+
+			if (portalConfig.title !== 'Resource Allocation') {
 				builder.setRoutes({
 					root: {
 						pageKey: 'project-portal',
@@ -85,11 +85,18 @@ export function createPortalFramework(portalConfig: PortalConfig) {
 					],
 				});
 			} else {
-				builder.setRoutes({
-					root: {
-						pageKey: 'resource-allocation-landingpage',
+				builder.setPortalConfig({
+					portal: {
+						id: portalConfig.portalId,
+						name: 'Resource Allocation',
+						contexts: [{ type: 'OrgChart' }],
 					},
-					routes: [],
+					routes: {
+						root: {
+							pageKey: 'resource-allocation-landingpage',
+						},
+						routes: [],
+					},
 				});
 			}
 		});
