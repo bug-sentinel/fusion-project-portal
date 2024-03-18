@@ -43,62 +43,62 @@ export function createPortalFramework(portalConfig: PortalConfig) {
 				portalEnv: portalConfig.fusionLegacyEnvIdentifier,
 			});
 
-			if (portalConfig.title !== 'Resource Allocation') {
-				builder.setRoutes({
-					root: {
-						pageKey: 'project-portal',
-					},
+			// if (portalConfig.title !== 'Resource Allocation') {
+			// 	builder.setRoutes({
+			// 		root: {
+			// 			pageKey: 'project-portal',
+			// 		},
 
-					routes: [
-						{
-							path: 'project/*',
-							pageKey: 'project',
-							messages: {
-								errorMessage: 'Fail to load project page',
-							},
-							children: [
-								{
-									messages: {
-										errorMessage: 'Fail to load project page',
-									},
-									path: ':contextId',
-									pageKey: 'project',
-								},
-							],
-						},
-						{
-							path: 'facility/*',
-							pageKey: 'facility',
-							messages: {
-								errorMessage: 'Fail to load facility page',
-							},
-							children: [
-								{
-									messages: {
-										errorMessage: 'Fail to load facility page',
-									},
-									path: ':contextId',
-									pageKey: 'facility',
-								},
-							],
-						},
-					],
-				});
-			} else {
-				builder.setPortalConfig({
-					portal: {
-						id: portalConfig.portalId,
-						name: 'Resource Allocation',
-						contexts: [{ type: 'OrgChart' }],
+			// 		routes: [
+			// 			{
+			// 				path: 'project/*',
+			// 				pageKey: 'project',
+			// 				messages: {
+			// 					errorMessage: 'Fail to load project page',
+			// 				},
+			// 				children: [
+			// 					{
+			// 						messages: {
+			// 							errorMessage: 'Fail to load project page',
+			// 						},
+			// 						path: ':contextId',
+			// 						pageKey: 'project',
+			// 					},
+			// 				],
+			// 			},
+			// 			{
+			// 				path: 'facility/*',
+			// 				pageKey: 'facility',
+			// 				messages: {
+			// 					errorMessage: 'Fail to load facility page',
+			// 				},
+			// 				children: [
+			// 					{
+			// 						messages: {
+			// 							errorMessage: 'Fail to load facility page',
+			// 						},
+			// 						path: ':contextId',
+			// 						pageKey: 'facility',
+			// 					},
+			// 				],
+			// 			},
+			// 		],
+			// 	});
+			// } else {
+			builder.setPortalConfig({
+				portal: {
+					id: 'a7035eef-7fd0-443f-7906-08db31e4e851',
+					name: 'Resource Allocation',
+					contexts: [{ type: 'OrgChart' }],
+				},
+				routes: {
+					root: {
+						pageKey: 'resource-allocation-landingpage',
 					},
-					routes: {
-						root: {
-							pageKey: 'resource-allocation-landingpage',
-						},
-						routes: [],
-					},
-				});
-			}
+					routes: [],
+				},
+			});
+			// }
 		});
 
 		enableContext(config);
