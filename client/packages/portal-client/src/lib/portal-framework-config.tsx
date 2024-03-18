@@ -39,7 +39,7 @@ export function createPortalFramework(portalConfig: PortalConfig) {
 
 		enablePortalConfig(config, (builder) => {
 			builder.setConfig({
-				portalId: portalConfig.portalId,
+				portalId: '6c125144-2d99-4ab7-3d22-08dc4723705f',
 				portalEnv: portalConfig.fusionLegacyEnvIdentifier,
 			});
 
@@ -87,7 +87,7 @@ export function createPortalFramework(portalConfig: PortalConfig) {
 			// } else {
 			builder.setPortalConfig({
 				portal: {
-					id: 'a7035eef-7fd0-443f-7906-08db31e4e851',
+					id: '6c125144-2d99-4ab7-3d22-08dc4723705f',
 					name: 'Resource Allocation',
 					contexts: [{ type: 'OrgChart' }],
 				},
