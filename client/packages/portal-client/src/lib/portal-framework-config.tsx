@@ -264,6 +264,17 @@ export function createPortalFramework(portalConfig: PortalConfig) {
 				}
 			});
 
+			// Hack
+
+			fusion.event.addEventListener('onAppScriptLoad', () => {
+				if (location.href.includes('/apps/') && !location.href.includes('?')) {
+					if (location.pathname.at(-1) !== '/') {
+						console.log('here');
+						fusion.navigation.navigator.replace(location.href + '/');
+					}
+				}
+			});
+
 			// Todo: should be moved to context module
 			fusion.context.currentContext$.pipe(skip(1)).subscribe((context) => {
 				const { navigator } = fusion.navigation;
@@ -295,3 +306,12 @@ export function createPortalFramework(portalConfig: PortalConfig) {
 }
 
 export default createPortalFramework;
+
+function appendSlashToUrl(url: string) {
+	// Check if the URL already ends with a slash
+	if (url.charAt(url.length - 1) !== '/') {
+		// If not, append a slash to the URL
+		url += '/';
+	}
+	return url;
+}
