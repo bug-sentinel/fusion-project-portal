@@ -7,7 +7,6 @@ using Fusion.Integration;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using static Fusion.Infrastructure.HttpClientNames;
 
 namespace Equinor.ProjectExecutionPortal.WebApi.Controllers
 {
