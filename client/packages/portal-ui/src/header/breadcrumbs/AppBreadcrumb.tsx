@@ -19,8 +19,8 @@ export const AppBreadcrumb: FC<AppBreadcrumbProp> = ({ appCategory, isMenuOpen, 
 
 	const ref = useRef<HTMLSpanElement>(null);
 	const hasApps = Boolean(appCategory?.apps.length);
-	console.error('Apps',appCategory?.apps);	
-
+	console.error('Apps',appCategory?.apps);
+	
 	return (
 		<>
 			{currentApp && (
@@ -40,7 +40,7 @@ export const AppBreadcrumb: FC<AppBreadcrumbProp> = ({ appCategory, isMenuOpen, 
 					open={isMenuOpen}
 					placement="bottom-start"
 					onMouseLeave={() => {
-						toggleMenuOpen(false);
+						toggleMenuOpen(false);						
 					}}
 					anchorEl={ref.current}					
 				>					
@@ -55,8 +55,10 @@ export const AppBreadcrumb: FC<AppBreadcrumbProp> = ({ appCategory, isMenuOpen, 
 								return -1;
 							}
 							return 0;
-						});										
-						return (
+						});	
+						
+						console.error('App', app.name);										
+						return ( 
 							<Menu.Item
 								as={Link}
 								key={app.key}
@@ -69,10 +71,10 @@ export const AppBreadcrumb: FC<AppBreadcrumbProp> = ({ appCategory, isMenuOpen, 
 										},
 										{ appKey: app.key, source: 'top-bar-navigation' }
 									);
-								}}
+								}}								
 							>
-								{currentApp?.key === app.key ? <b>{app.name}</b> : app.name}
-							</Menu.Item>
+								{currentApp?.key === app.key ? <b>{app.name}</b> : app.name}								
+							</Menu.Item>						
 						);	
 					})}
 				</Menu>
