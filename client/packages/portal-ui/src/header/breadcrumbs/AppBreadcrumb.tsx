@@ -19,7 +19,7 @@ export const AppBreadcrumb: FC<AppBreadcrumbProp> = ({ appCategory, isMenuOpen, 
 
 	const ref = useRef<HTMLSpanElement>(null);
 	const hasApps = Boolean(appCategory?.apps.length);
-	console.log(appCategory?.apps);	
+	console.error('Apps',appCategory?.apps);	
 
 	return (
 		<>
